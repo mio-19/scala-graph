@@ -11,7 +11,7 @@ lazy val all = project
       crossScalaVersions := Nil
     )
   )
-  .aggregate(core.jvm, dot.jvm, json)
+  .aggregate(core.jvm, core.js, core.native, dot.jvm, dot.js, dot.native, json)
 
 // to publish as JS do "project coreJS", "fastOptJS", "package", "publishSigned"
 

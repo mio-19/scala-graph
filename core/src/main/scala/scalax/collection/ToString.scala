@@ -97,6 +97,10 @@ object ToString {
 
   private val lineSeparator = System.lineSeparator
 
+  private implicit class StringOpsForJava8(s: String) {
+    def isBlank: Boolean = s.trim.isEmpty
+  }
+
   implicit private class StringEnrichments(val it: Iterable[_]) extends AnyVal {
 
     def prefixed(style: Style, prefix: String, separator: String): String = {
